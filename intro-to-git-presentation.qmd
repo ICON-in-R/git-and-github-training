@@ -1,0 +1,56 @@
+---
+title: "Introduction to Git"
+author: "Nathan Green"
+format: 
+  revealjs:
+    slide-number: true
+---
+
+## Introduction to Git
+
+Git is a **version control system**, like a powerful "save button" for your files and directories. It helps you track changes and keep a history of your project.
+
+![](xkcd-never-look.png)
+
+------------------------------------------------------------------------
+
+## Git vs. a Text Editor 📝
+
+A text editor saves the entire file at once, giving you only one record unless you make manual copies (e.g., `draft1.doc`, `draft2.doc`).
+
+Git, on the other hand, records the *differences* in files and folders and keeps a historical record of every save. This is a game-changer for developers!
+
+![](xkcd-git-commit.png)
+
+------------------------------------------------------------------------
+
+## Why is Git Useful? 🤔
+
+### For Individuals:
+
+-   Review how your project grows over time.
+-   Easily look at or restore file states from the past.
+
+### For Teams:
+
+-   Share and collaborate on projects with other developers.
+-   Push your project to platforms like **GitHub**, Bitbucket, or GitLab.
+
+------------------------------------------------------------------------
+
+## Git + GitHub = ❤️
+
+-   **Git** works on your **local** machine.
+-   **GitHub** is a **remote** storage facility on the web for your coding projects.
+-   You can have private repos and manage access
+
+------------------------------------------------------------------------
+
+## Assignment and Resources 💻
+
+-  Read chapters 1.1 through 1.4 from the **Getting Started** section of [Pro Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
+-  If you haven’t yet, [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+-   [Short History for Git and Github](youtube.com/watch?v=1h9_cB9mPT8&list=PLqGj3iMvMa4LFz8DZ0t-89twnelpT4Ilw&index=1)
+-   [What is Git and GitHub?](https://content.red-badger.com/resources/what-is-git-and-github)
+-   [What is version control?](https://www.atlassian.com/git/tutorials/what-is-version-control)
+-   [What is Git?](https://www.atlassian.com/git/tutorials/what-is-git)
