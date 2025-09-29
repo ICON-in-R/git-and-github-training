@@ -1,0 +1,85 @@
+---
+title: "Installing and Setting Up Git on Windows"
+author: "N Green"
+date: "2025-09-29"
+format: pdf
+pdf-engine: xelatex
+header-includes: |
+  \usepackage{fontawesome5}
+---
+
+## Introduction
+
+Git is an essential version control system for software development and data science projects. This guide will walk you through the process of installing and configuring Git on a Windows machine. 🧐
+
+---
+
+## 1. Installation
+
+First, you need to download and install Git for Windows.
+
+1.  **Download the Installer**: Navigate to the official Git website at [git-scm.com](https://git-scm.com/download/win). The download for the latest 64-bit version should start automatically.
+
+2.  **Run the Installer**: Once the download is complete, open the installer `.exe` file. You'll be prompted to allow the app to make changes to your device; click **Yes**.
+
+3.  **Follow the Setup Wizard**: The installer offers many customization options. For most users, the default settings are perfect. Here are a few key screens:
+    * **Select Components**: The default selections are fine. You can optionally add a Git icon to the Desktop.
+    * **Choosing the default editor for Git**: The installer will default to Vim. If you're not comfortable with Vim and almost everyone isn't so I would seriously recommending not using this at least for now, you can select a different editor like Visual Studio Code, Notepad++, or Sublime Text from the dropdown menu. 
+    * **Adjusting the name of the initial branch in new repositories**: The default is `main`. It's recommended to stick with this modern standard.
+    * **Adjusting your PATH environment**: The recommended option, "**Git from the command line and also from 3rd-party software**," is the best choice. This allows you to use Git from both Git Bash and the Windows Command Prompt/PowerShell.
+    * **All other steps**: For the remaining steps (choosing SSH executable, server certificates, line ending conversions, terminal emulator, etc.), the default options are sensible and work well. Click **Next** through these screens and finally click **Install**.
+
+---
+
+## 2. Configuration
+
+After the installation is complete, you need to configure your user information. Git uses this information to label your commits.
+
+You can run these commands from **any** terminal on your system, including **Windows Terminal (PowerShell)**, the classic **Command Prompt**, or **Git Bash** (which was installed with Git).
+
+Open your preferred terminal.
+
+1.  **Set Your Username**: This name will appear on your commits. Type the following command, replacing "Your Name" with your actual name.
+
+    ```bash
+    git config --global user.name "Your Name"
+    ```
+
+2.  **Set Your Email Address**: This email will be associated with your commits. It's crucial to use the same email address that you use for services like GitHub or GitLab.
+
+    ```bash
+    git config --global user.email "youremail@example.com"
+    ```
+
+---
+
+## 3. Verify Your Configuration
+
+To check that your configuration was set correctly, you can run the following commands.
+
+1.  **Check Your Settings**: To see your global configuration settings, use this command:
+
+    ```bash
+    git config --list
+    ```
+
+    You should see the `user.name` and `user.email` you just set in the output.
+
+2.  **Check Git Version**: To ensure Git was installed properly, you can check its version.
+
+    ```bash
+    git --version
+    ```
+
+    This will output the installed version of Git, for example, `git version 2.45.1.windows.1`.
+
+---
+
+## Next Steps
+
+Congratulations! \faIcon{trophy} 🎉 You have successfully installed and configured Git on your Windows machine. You are now ready to start using it for version control.
+
+You can begin by:
+
+* Creating a new repository with `git init`.
+* Cloning an existing repository from a service like GitHub with `git clone <repository-url>`.
