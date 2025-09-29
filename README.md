@@ -97,10 +97,4 @@ Contributions and suggestions are welcome! Please open an [issue](https://github
 
 ---
 
-## License
-
-This repository is licensed under the [MIT License](LICENSE).
-
----
-
 Happy coding! 🚀
