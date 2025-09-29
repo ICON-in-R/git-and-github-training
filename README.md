@@ -35,16 +35,15 @@ Materials include R scripts, markdown documents, and hands-on exercises.
 ## Getting Started
 
 1. **Clone the repository:**
+   - Either download the zip from GitHub by clicking on the `<> Code` button
+   - Or use the terminal
    ```sh
    git clone https://github.com/ICON-in-R/git-and-github-training.git
    cd git-and-github-training
    ```
 
 2. **Explore the directories:**  
-   - Look for folders named `exercises`, `examples`, or `resources` for workshop content.
-
-3. **Follow along:**  
-   - Work through the exercises as instructed during the workshop or at your own pace.
+   - Each week new material will be added, including the slides, made in quarto.
 
 ---
 
@@ -54,7 +53,7 @@ Materials include R scripts, markdown documents, and hands-on exercises.
 - **Basic Git Workflow**
 - **Branching and Merging**
 - **Working with Remotes**
-- **Collaboration on GitHub**
+- **Collaboration on shared folder or GitHub**
 - **Resolving Conflicts**
 - **Best Practices**
 
