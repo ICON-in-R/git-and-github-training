@@ -1,4 +1,6 @@
 # Git and GitHub Training
+<img src="git.png" align="right" height=180/>
+
 
 Welcome to the **Git and GitHub Training** repository! This resource is designed to help you learn the fundamentals of Git version control and how to use GitHub for collaborative code development. Whether you're brand new to version control or looking to refine your workflow, this repository provides practical exercises, example code, and reference materials to guide you.
 
