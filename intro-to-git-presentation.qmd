@@ -11,6 +11,7 @@ format:
 Git is a **version control system**, like a powerful "save button" for your files and directories. It helps you track changes and keep a history of your project.
 
 ![](xkcd-never-look.png)
+![](File_naming_meme.png)
 
 ------------------------------------------------------------------------
 
@@ -45,6 +46,10 @@ Git, on the other hand, records the *differences* in files and folders and keeps
 -   You can have private repos and manage access
 
 ------------------------------------------------------------------------
+
+## Example Workflow
+
+![](git-workflow-diagram.png)
 
 ## Assignment and Resources 💻
 
