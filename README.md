@@ -1,1 +1,1 @@
-# git-and-github-training
+# Git and GitHub Training
