@@ -2,10 +2,12 @@
 title: "Installing and Setting Up Git on Windows"
 author: "N Green"
 date: "2025-09-29"
-format: pdf
-pdf-engine: xelatex
-header-includes: |
-  \usepackage{fontawesome5}
+format:
+  pdf:
+    pdf-engine: xelatex
+    header-includes: |
+      \usepackage{fontawesome5}
+  revealjs: default
 ---
 
 ## Introduction
@@ -73,6 +75,12 @@ To check that your configuration was set correctly, you can run the following co
 
     This will output the installed version of Git, for example, `git version 2.45.1.windows.1`.
 
+3. **Show All Commands**
+
+  ```bash
+  git
+  ```
+  
 ---
 
 ## Next Steps
@@ -81,5 +89,7 @@ Congratulations! \faIcon{trophy} 🎉 You have successfully installed and config
 
 You can begin by:
 
+* Create a new folder with `mkdir git-practice`
+* Move to folder with `cd git-practice`
 * Creating a new repository with `git init`.
 * Cloning an existing repository from a service like GitHub with `git clone <repository-url>`.
