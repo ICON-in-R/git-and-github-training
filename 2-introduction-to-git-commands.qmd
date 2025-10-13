@@ -67,7 +67,7 @@ or use the command line. The fastest way to create an empty file is with the `to
 3.  Run the following command:
 
 ```bash
-touch foo.txt
+"hello" > foo.txt
 ```
 
 This will instantly create an empty file named **foo.txt** in your current directory. You can confirm it was created by running the `ls` command to list the contents of the directory.
