@@ -1,0 +1,184 @@
+[
+  {
+    "objectID": "intro-to-git-presentation.html#workshop-overview",
+    "href": "intro-to-git-presentation.html#workshop-overview",
+    "title": "Introduction to Git",
+    "section": "Workshop Overview",
+    "text": "Workshop Overview\n\nIntroduction to Version Control (today!)\nBasic Git Workflow\nBranching and Merging\nCollaboration on shared folder or GitHub\nBest Practices\n\nSession contains short presentations, live demos, and hands-on tasks"
+  },
+  {
+    "objectID": "intro-to-git-presentation.html#training-material",
+    "href": "intro-to-git-presentation.html#training-material",
+    "title": "Introduction to Git",
+    "section": "Training material",
+    "text": "Training material\n\nClone the repository:\n\nEither download the zip from GitHub by clicking on the &lt;&gt; Code button\nOr use the terminal\n\n git clone https://github.com/ICON-in-R/git-and-github-training.git\n cd git-and-github-training"
+  },
+  {
+    "objectID": "intro-to-git-presentation.html#introduction-to-git",
+    "href": "intro-to-git-presentation.html#introduction-to-git",
+    "title": "Introduction to Git",
+    "section": "Introduction to Git",
+    "text": "Introduction to Git\nGit is a version control system, like a powerful “save button” for your files and directories. It helps you track changes and keep a history of your project.\n \n\nmost popular different version of CV eg laptop, PC, work, home can view all the changes with previous versions"
+  },
+  {
+    "objectID": "intro-to-git-presentation.html#git-vs.-a-text-editor",
+    "href": "intro-to-git-presentation.html#git-vs.-a-text-editor",
+    "title": "Introduction to Git",
+    "section": "Git vs. a Text Editor 📝",
+    "text": "Git vs. a Text Editor 📝\nA text editor saves the entire file at once, giving you only one record unless you make manual copies (e.g., draft1.doc, draft2.doc).\nGit, on the other hand, records the differences in files and folders and keeps a historical record of every save. This is a game-changer for developers!"
+  },
+  {
+    "objectID": "intro-to-git-presentation.html#why-is-git-useful",
+    "href": "intro-to-git-presentation.html#why-is-git-useful",
+    "title": "Introduction to Git",
+    "section": "Why is Git Useful? 🤔",
+    "text": "Why is Git Useful? 🤔\nFor Individuals:\n\nReview how your project grows over time.\nEasily look at or restore file states from the past.\n\nFor Teams:\n\nShare and collaborate on projects with other developers.\nPush your project to platforms like GitHub, Bitbucket, or GitLab."
+  },
+  {
+    "objectID": "intro-to-git-presentation.html#git-github",
+    "href": "intro-to-git-presentation.html#git-github",
+    "title": "Introduction to Git",
+    "section": "Git + GitHub = ❤️",
+    "text": "Git + GitHub = ❤️\n\nGit works on your local machine.\nGitHub is a remote storage facility on the web for your coding projects.\nYou can have private repos and manage access\nLocal interface with GitHub Desktop"
+  },
+  {
+    "objectID": "intro-to-git-presentation.html#example-workflow",
+    "href": "intro-to-git-presentation.html#example-workflow",
+    "title": "Introduction to Git",
+    "section": "Example Workflow",
+    "text": "Example Workflow\n\n\nworking directory is where make changes to files - not tracked yet staging area is where prep changes before committing them - draft space local repository is project history stored on your computer remote repo is shared version of the project hosted on the internet or network branches parallel versions of project pull request is way to propose changes - review, discuss, merge"
+  },
+  {
+    "objectID": "intro-to-git-presentation.html#assignment-and-resources",
+    "href": "intro-to-git-presentation.html#assignment-and-resources",
+    "title": "Introduction to Git",
+    "section": "Assignment and Resources 💻",
+    "text": "Assignment and Resources 💻\n\nRead chapters 1.1 through 1.4 from the Getting Started section of Pro Git\nIf you haven’t yet, install Git\nNB macOS should have git pre-installed\nShort History for Git and Github\nWhat is Git and GitHub?\nWhat is version control?\nWhat is Git?"
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#commits-diffs-and-tags",
+    "href": "2-introduction-to-git-commands.html#commits-diffs-and-tags",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "Commits, Diffs, and Tags",
+    "text": "Commits, Diffs, and Tags\nWe can connect the fundamental concepts of Git to a typical data science workflow using three key ideas: the repository, the commit, and the diff.\nRecall that a repository (or repo) is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo at a specific moment.\nIn fact, the notion of any specific version of a file is as an accumulation of diffs. If you go back far enough, you find the commit where the file was created in the first place. Every later version is stored by Git as that initial version, plus all the intervening diffs in the history that affect the file.\nEvery time you make a commit you must also write a short commit message. Ideally, this conveys the motivation for the change; the diff will show the content so don’t talk about this. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the history, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed.\nEvery commit needs some sort of ID and Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers. Usually the first 7 characters suffice. You can also designate certain snapshots as special with a tag, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., “v1.0.3”. For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators."
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#practice-recovering-from-mistakes",
+    "href": "2-introduction-to-git-commands.html#practice-recovering-from-mistakes",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "Practice Recovering From Mistakes",
+    "text": "Practice Recovering From Mistakes\nThis section covers how to recover from common mistakes. You can practice these commands in any local Git repository you’ve created. These operations do not involve GitHub.\nA word of caution: if the commit you want to fix is not your most recent one, seriously consider just letting it go. Trying to change older history can get complicated quickly."
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#undoing-the-last-commit-with-git-reset",
+    "href": "2-introduction-to-git-commands.html#undoing-the-last-commit-with-git-reset",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "Undoing the Last Commit with git reset",
+    "text": "Undoing the Last Commit with git reset\nSo, you want to undo the last commit? You have a few options depending on what you want to do with the work you’ve committed. The HEAD^ syntax refers to the commit before the most recent one.\nOption 1: Discard Everything (Hard Reset)\nThis option completely undoes the last commit and discards all of the changes in those files. Use this with caution! ⚠️\n\nUse Case: You want to completely erase the last commit and any work associated with it.\nCommand: git reset --hard HEAD^\nOutcome: You will lose any changes that were not reflected in the commit-before-last. Your project is now in the exact state it was in before you made the bad commit.\n\n# WARNING: This deletes your work from the last commit\ngit reset --hard HEAD^\nOption 2: Keep Changes, Unstage Files (Mixed Reset)\nThis is the default reset mode. It undoes the commit but leaves the files in your working directory as they were. The changes will be unstaged.\n\nUse Case: You like the changes you made, but you want to recommit them differently, perhaps in multiple, smaller commits.\nCommand: git reset HEAD^\nOutcome: The commit is undone. Your files still contain all the changes, but they are no longer staged for the next commit.\n\n# This is the same as `git reset --mixed HEAD^`\ngit reset HEAD^\nOption 3: Keep Changes, Keep Files Staged (Soft Reset)\nThis option is the least destructive. It undoes the commit but leaves your working directory and your staging area exactly as they were.\n\nUse Case: You just want to edit the commit message or add one more small change to the last commit.\nCommand: git reset --soft HEAD^\nOutcome: It’s as if you ran git add but never ran git commit. You are right back to the moment before you committed.\n\n# Undoes the commit but leaves everything staged\ngit reset --soft HEAD^"
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#amending-the-most-recent-commit",
+    "href": "2-introduction-to-git-commands.html#amending-the-most-recent-commit",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "Amending the Most Recent Commit",
+    "text": "Amending the Most Recent Commit\nIf you just want to tweak the most recent commit—like fixing a typo in the commit message or adding a file you forgot—it’s often easier to amend it rather than resetting.\nFirst, make any changes you need to your files and stage them with git add. If you only want to change the commit message, you don’t need to change any files.\nTo amend from the command line, you can either have Git open an editor to let you create the new message or provide the new message directly.\n# This opens your default text editor to change the commit message\ngit commit --amend\n# This amends the commit and provides a new message directly\ngit commit --amend -m \"New, corrected commit message\"\nDifference between git add . and git commit -all\nIn Git, committing is a two-step process: first you stage changes with git add, then you commit them with git commit. Two common workflows accomplish this, but they behave differently, especially concerning new files.\nThe key difference between git commit -a and git add . is how they handle new, untracked files.\nThe git commit -a command (or git commit --all) is a shortcut that combines staging and committing into a single step. However, it only stages files that Git is already tracking.\n\nWhat it does: Automatically stages all modified or deleted files that have been previously committed to the repository, and then opens the commit message editor.\nWhat it ignores: It will completely ignore any new files you have created that Git does not yet track.\n\nThe comprehensive method is to use git add . and git commit. This is the standard, explicit two-step workflow. The git add . command is a powerful staging tool.\n\nWhat it does: git add . stages all changes in the current directory. This includes modifications to tracked files, deletions of tracked files, and any new, untracked files.\nWhat it ignores: Nothing. It stages everything."
+  },
+  {
+    "objectID": "1-how-to-setup-git.html#introduction",
+    "href": "1-how-to-setup-git.html#introduction",
+    "title": "Installing and Setting Up Git on Windows",
+    "section": "Introduction",
+    "text": "Introduction\nGit is an essential version control system for software development and data science projects. This guide will walk you through the process of installing and configuring Git on a Windows machine. 🧐"
+  },
+  {
+    "objectID": "1-how-to-setup-git.html#installation",
+    "href": "1-how-to-setup-git.html#installation",
+    "title": "Installing and Setting Up Git on Windows",
+    "section": "1. Installation",
+    "text": "1. Installation\nFirst, you need to download and install Git for Windows.\n\nDownload the Installer: Navigate to the official Git website at git-scm.com. The download for the latest 64-bit version should start automatically.\nRun the Installer: Once the download is complete, open the installer .exe file. You’ll be prompted to allow the app to make changes to your device; click Yes.\nFollow the Setup Wizard: The installer offers many customization options. For most users, the default settings are perfect. Here are a few key screens:\n\nSelect Components: The default selections are fine. You can optionally add a Git icon to the Desktop.\nChoosing the default editor for Git: The installer will default to Vim. If you’re not comfortable with Vim and almost everyone isn’t so I would seriously recommending not using this at least for now, you can select a different editor like Visual Studio Code, Notepad++, or Sublime Text from the dropdown menu.\nAdjusting the name of the initial branch in new repositories: The default is main. It’s recommended to stick with this modern standard.\nAdjusting your PATH environment: The recommended option, “Git from the command line and also from 3rd-party software,” is the best choice. This allows you to use Git from both Git Bash and the Windows Command Prompt/PowerShell.\nAll other steps: For the remaining steps (choosing SSH executable, server certificates, line ending conversions, terminal emulator, etc.), the default options are sensible and work well. Click Next through these screens and finally click Install."
+  },
+  {
+    "objectID": "1-how-to-setup-git.html#configuration",
+    "href": "1-how-to-setup-git.html#configuration",
+    "title": "Installing and Setting Up Git on Windows",
+    "section": "2. Configuration",
+    "text": "2. Configuration\nAfter the installation is complete, you need to configure your user information. Git uses this information to label your commits.\nYou can run these commands from any terminal on your system, including Windows Terminal (PowerShell), the classic Command Prompt, or Git Bash (which was installed with Git).\nOpen your preferred terminal.\n\nSet Your Username: This name will appear on your commits. Type the following command, replacing “Your Name” with your actual name.\ngit config --global user.name \"Your Name\"\nSet Your Email Address: This email will be associated with your commits. It’s crucial to use the same email address that you use for services like GitHub or GitLab.\ngit config --global user.email \"youremail@example.com\""
+  },
+  {
+    "objectID": "1-how-to-setup-git.html#verify-your-configuration",
+    "href": "1-how-to-setup-git.html#verify-your-configuration",
+    "title": "Installing and Setting Up Git on Windows",
+    "section": "3. Verify Your Configuration",
+    "text": "3. Verify Your Configuration\nTo check that your configuration was set correctly, you can run the following commands.\n\nCheck Your Settings: To see your global configuration settings, use this command:\ngit config --list\nYou should see the user.name and user.email you just set in the output.\nCheck Git Version: To ensure Git was installed properly, you can check its version.\ngit --version\nThis will output the installed version of Git, for example, git version 2.45.1.windows.1.\nShow All Commands\n\ngit"
+  },
+  {
+    "objectID": "1-how-to-setup-git.html#next-steps",
+    "href": "1-how-to-setup-git.html#next-steps",
+    "title": "Installing and Setting Up Git on Windows",
+    "section": "Next Steps",
+    "text": "Next Steps\nCongratulations! 🎉 You have successfully installed and configured Git on your Windows machine. You are now ready to start using it for version control.\nYou can begin by:\n\nCreate a new folder with mkdir git-practice\nMove to folder with cd git-practice\nCreating a new repository with git init.\nCloning an existing repository from a service like GitHub with git clone &lt;repository-url&gt;."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "Welcome to the Git and GitHub Training repository! This resource is designed to help you learn the fundamentals of Git version control and how to use GitHub for collaborative code development. Whether you’re brand new to version control or looking to refine your workflow, this repository provides practical exercises, example code, and reference materials to guide you.\n\n\n\n\nAbout This Repository\nGetting Started\nWorkshop Structure\nPrerequisites\nKey Topics\nResources\nContributing\nLicense\n\n\n\n\n\nThis repository supports interactive workshops and self-paced learning on the following topics:\n\nVersion control with Git (basics and advanced concepts)\nUsing GitHub for team collaboration\nResolving conflicts and working with branches\nBest practices for open-source development\n\nMaterials include R scripts, markdown documents, and hands-on exercises.\n\n\n\n\n\nClone the repository:\n\nEither download the zip from GitHub by clicking on the &lt;&gt; Code button\nOr use the terminal\n\ngit clone https://github.com/ICON-in-R/git-and-github-training.git\ncd git-and-github-training\nExplore the directories:\n\nEach week new material will be added, including the slides, made in quarto.\n\n\n\n\n\n\n\nIntroduction to Version Control\nBasic Git Workflow\nBranching and Merging\nWorking with Remotes\nCollaboration on shared folder or GitHub\nResolving Conflicts\nBest Practices\n\nEach session contains short presentations, live demos, and hands-on tasks.\n\n\n\n\n\nBasic familiarity with the command line or terminal\nGit installed on your system\nA GitHub account\n(Optional) R if you wish to run the R code examples\n\n\n\n\n\n\nInitializing local repositories\nMaking commits and viewing history\nBranching and merging strategies\nPushing to and pulling from remotes\nForking, cloning, and pull requests\nManaging merge conflicts\nCollaborating with others using GitHub issues and pull requests\nWorking with R projects in version control\n\n\n\n\n\n\nGit Book\nGitHub Docs\nHappy Git with R (especially for R users)\nGit Cheatsheet (PDF)\n\n\n\n\n\nContributions and suggestions are welcome! Please open an issue or submit a pull request.\n\nHappy coding! 🚀"
+  },
+  {
+    "objectID": "index.html#table-of-contents",
+    "href": "index.html#table-of-contents",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "About This Repository\nGetting Started\nWorkshop Structure\nPrerequisites\nKey Topics\nResources\nContributing\nLicense"
+  },
+  {
+    "objectID": "index.html#about-this-repository",
+    "href": "index.html#about-this-repository",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "This repository supports interactive workshops and self-paced learning on the following topics:\n\nVersion control with Git (basics and advanced concepts)\nUsing GitHub for team collaboration\nResolving conflicts and working with branches\nBest practices for open-source development\n\nMaterials include R scripts, markdown documents, and hands-on exercises."
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "Clone the repository:\n\nEither download the zip from GitHub by clicking on the &lt;&gt; Code button\nOr use the terminal\n\ngit clone https://github.com/ICON-in-R/git-and-github-training.git\ncd git-and-github-training\nExplore the directories:\n\nEach week new material will be added, including the slides, made in quarto."
+  },
+  {
+    "objectID": "index.html#workshop-structure",
+    "href": "index.html#workshop-structure",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "Introduction to Version Control\nBasic Git Workflow\nBranching and Merging\nWorking with Remotes\nCollaboration on shared folder or GitHub\nResolving Conflicts\nBest Practices\n\nEach session contains short presentations, live demos, and hands-on tasks."
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "Basic familiarity with the command line or terminal\nGit installed on your system\nA GitHub account\n(Optional) R if you wish to run the R code examples"
+  },
+  {
+    "objectID": "index.html#key-topics",
+    "href": "index.html#key-topics",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "Initializing local repositories\nMaking commits and viewing history\nBranching and merging strategies\nPushing to and pulling from remotes\nForking, cloning, and pull requests\nManaging merge conflicts\nCollaborating with others using GitHub issues and pull requests\nWorking with R projects in version control"
+  },
+  {
+    "objectID": "index.html#resources",
+    "href": "index.html#resources",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "Git Book\nGitHub Docs\nHappy Git with R (especially for R users)\nGit Cheatsheet (PDF)"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Git and GitHub Training",
+    "section": "",
+    "text": "Contributions and suggestions are welcome! Please open an issue or submit a pull request.\n\nHappy coding! 🚀"
+  }
+]

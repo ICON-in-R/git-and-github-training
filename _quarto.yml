@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Git and GitHub Training"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: 1-how-to-setup-git.qmd
+        text: Setup Git
+      - href: 2-introduction-to-git-commands.qmd
+        text: Git Commands
+      - href: intro-to-git-presentation.qmd
+        text: Presentation
+
+format:
+  html:
+    theme: cosmo
+    toc: true
