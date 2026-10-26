@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "intro-to-git-presentation.html",
+    "href": "intro-to-git-presentation.html",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Introduction to Version Control (today!)\nBasic Git Workflow\nBranching and Merging\nCollaboration on shared folder or GitHub\nBest Practices\n\nSession contains short presentations, live demos, and hands-on tasks"
+  },
+  {
     "objectID": "intro-to-git-presentation.html#workshop-overview",
     "href": "intro-to-git-presentation.html#workshop-overview",
     "title": "Introduction to Git",
@@ -56,39 +63,109 @@
     "text": "Assignment and Resources 💻\n\nRead chapters 1.1 through 1.4 from the Getting Started section of Pro Git\nIf you haven’t yet, install Git\nNB macOS should have git pre-installed\nShort History for Git and Github\nWhat is Git and GitHub?\nWhat is version control?\nWhat is Git?"
   },
   {
-    "objectID": "2-introduction-to-git-commands.html#commits-diffs-and-tags",
-    "href": "2-introduction-to-git-commands.html#commits-diffs-and-tags",
-    "title": "A Git Tutorial: Commits, Branches, and Diffs",
-    "section": "Commits, Diffs, and Tags",
-    "text": "Commits, Diffs, and Tags\nWe can connect the fundamental concepts of Git to a typical data science workflow using three key ideas: the repository, the commit, and the diff.\nRecall that a repository (or repo) is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo at a specific moment.\nIn fact, the notion of any specific version of a file is as an accumulation of diffs. If you go back far enough, you find the commit where the file was created in the first place. Every later version is stored by Git as that initial version, plus all the intervening diffs in the history that affect the file.\nEvery time you make a commit you must also write a short commit message. Ideally, this conveys the motivation for the change; the diff will show the content so don’t talk about this. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the history, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed.\nEvery commit needs some sort of ID and Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers. Usually the first 7 characters suffice. You can also designate certain snapshots as special with a tag, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., “v1.0.3”. For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators."
+    "objectID": "3-sharing-repos-and-remotes.html",
+    "href": "3-sharing-repos-and-remotes.html",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "",
+    "text": "In our previous sessions, we learned how to work with Git on our own computer: creating a local repository, staging changes, committing snapshots, and inspecting history.\nToday we take the big leap: working with others and sharing code.\n\nPart 1 (10 mins): What is a Remote?\n\nGit is distributed: Cloud (GitHub) vs Shared Drives (Network/Local)\nWhat is a “bare” repository and why do we need one?\n\nPart 2 (15 mins): The Core Collaboration Workflow\n\nThe big three commands: git clone, git push, git pull\nHands-on interactive exercise: Simulating two collaborators\n\nPart 3 (5 mins): Best Practices & Troubleshooting\n\nWhen pushes get rejected (“Fetch first!”)\nGolden rules for smooth team collaboration"
   },
   {
-    "objectID": "2-introduction-to-git-commands.html#practice-recovering-from-mistakes",
-    "href": "2-introduction-to-git-commands.html#practice-recovering-from-mistakes",
-    "title": "A Git Tutorial: Commits, Branches, and Diffs",
-    "section": "Practice Recovering From Mistakes",
-    "text": "Practice Recovering From Mistakes\nThis section covers how to recover from common mistakes. You can practice these commands in any local Git repository you’ve created. These operations do not involve GitHub.\nA word of caution: if the commit you want to fix is not your most recent one, seriously consider just letting it go. Trying to change older history can get complicated quickly."
+    "objectID": "3-sharing-repos-and-remotes.html#session-overview-30-minutes",
+    "href": "3-sharing-repos-and-remotes.html#session-overview-30-minutes",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "Session Overview (30 Minutes)",
+    "text": "Session Overview (30 Minutes)\nIn our previous sessions, we learned how to work with Git on our own computer: creating a local repository, staging changes, committing snapshots, and inspecting history.\nToday we take the big leap: working with others and sharing code.\n\nPart 1 (10 mins): What is a Remote?\n\nGit is distributed: Cloud (GitHub) vs Shared Drives (Network/Local)\nWhat is a “bare” repository and why do we need one?\n\nPart 2 (15 mins): The Core Collaboration Workflow\n\nThe big three commands: git clone, git push, git pull\nHands-on interactive exercise: Simulating two collaborators\n\nPart 3 (5 mins): Best Practices & Troubleshooting\n\nWhen pushes get rejected (“Fetch first!”)\nGolden rules for smooth team collaboration"
   },
   {
-    "objectID": "2-introduction-to-git-commands.html#undoing-the-last-commit-with-git-reset",
-    "href": "2-introduction-to-git-commands.html#undoing-the-last-commit-with-git-reset",
-    "title": "A Git Tutorial: Commits, Branches, and Diffs",
-    "section": "Undoing the Last Commit with git reset",
-    "text": "Undoing the Last Commit with git reset\nSo, you want to undo the last commit? You have a few options depending on what you want to do with the work you’ve committed. The HEAD^ syntax refers to the commit before the most recent one.\nOption 1: Discard Everything (Hard Reset)\nThis option completely undoes the last commit and discards all of the changes in those files. Use this with caution! ⚠️\n\nUse Case: You want to completely erase the last commit and any work associated with it.\nCommand: git reset --hard HEAD^\nOutcome: You will lose any changes that were not reflected in the commit-before-last. Your project is now in the exact state it was in before you made the bad commit.\n\n# WARNING: This deletes your work from the last commit\ngit reset --hard HEAD^\nOption 2: Keep Changes, Unstage Files (Mixed Reset)\nThis is the default reset mode. It undoes the commit but leaves the files in your working directory as they were. The changes will be unstaged.\n\nUse Case: You like the changes you made, but you want to recommit them differently, perhaps in multiple, smaller commits.\nCommand: git reset HEAD^\nOutcome: The commit is undone. Your files still contain all the changes, but they are no longer staged for the next commit.\n\n# This is the same as `git reset --mixed HEAD^`\ngit reset HEAD^\nOption 3: Keep Changes, Keep Files Staged (Soft Reset)\nThis option is the least destructive. It undoes the commit but leaves your working directory and your staging area exactly as they were.\n\nUse Case: You just want to edit the commit message or add one more small change to the last commit.\nCommand: git reset --soft HEAD^\nOutcome: It’s as if you ran git add but never ran git commit. You are right back to the moment before you committed.\n\n# Undoes the commit but leaves everything staged\ngit reset --soft HEAD^"
+    "objectID": "3-sharing-repos-and-remotes.html#demystifying-remotes",
+    "href": "3-sharing-repos-and-remotes.html#demystifying-remotes",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "1. Demystifying “Remotes”",
+    "text": "1. Demystifying “Remotes”\nWhat is a Remote Repository?\nA remote is simply another copy of your Git repository located somewhere else that your local repository can talk to. It acts as the central hub or “single source of truth” for a project.\n       Local Repo (Alice)\n          \\\n           \\  push / pull\n            v\n     [ REMOTE REPO (Hub) ]\n            ^\n           /  push / pull\n          /\n       Local Repo (Bob)\nInstead of emailing files like analysis_v3_final_NathanEdits.R, everyone synchronises their local changes with the remote hub."
   },
   {
-    "objectID": "2-introduction-to-git-commands.html#amending-the-most-recent-commit",
-    "href": "2-introduction-to-git-commands.html#amending-the-most-recent-commit",
-    "title": "A Git Tutorial: Commits, Branches, and Diffs",
-    "section": "Amending the Most Recent Commit",
-    "text": "Amending the Most Recent Commit\nIf you just want to tweak the most recent commit—like fixing a typo in the commit message or adding a file you forgot—it’s often easier to amend it rather than resetting.\nFirst, make any changes you need to your files and stage them with git add. If you only want to change the commit message, you don’t need to change any files.\nTo amend from the command line, you can either have Git open an editor to let you create the new message or provide the new message directly.\n# This opens your default text editor to change the commit message\ngit commit --amend\n# This amends the commit and provides a new message directly\ngit commit --amend -m \"New, corrected commit message\"\nDifference between git add . and git commit -all\nIn Git, committing is a two-step process: first you stage changes with git add, then you commit them with git commit. Two common workflows accomplish this, but they behave differently, especially concerning new files.\nThe key difference between git commit -a and git add . is how they handle new, untracked files.\nThe git commit -a command (or git commit --all) is a shortcut that combines staging and committing into a single step. However, it only stages files that Git is already tracking.\n\nWhat it does: Automatically stages all modified or deleted files that have been previously committed to the repository, and then opens the commit message editor.\nWhat it ignores: It will completely ignore any new files you have created that Git does not yet track.\n\nThe comprehensive method is to use git add . and git commit. This is the standard, explicit two-step workflow. The git add . command is a powerful staging tool.\n\nWhat it does: git add . stages all changes in the current directory. This includes modifications to tracked files, deletions of tracked files, and any new, untracked files.\nWhat it ignores: Nothing. It stages everything."
+    "objectID": "3-sharing-repos-and-remotes.html#git-is-distributed-cloud-vs-shared-drive",
+    "href": "3-sharing-repos-and-remotes.html#git-is-distributed-cloud-vs-shared-drive",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "Git is Distributed: Cloud vs Shared Drive",
+    "text": "Git is Distributed: Cloud vs Shared Drive\nA common misconception is that Git requires GitHub. It does not!\nGit is a distributed version control system. Your remote repository can live anywhere a file system or network connection exists:\n\n\n\n\n\n\n\n\nRemote Type\nWhere it lives\nWhen to use it\n\n\n\n\nGitHub / GitLab / Bitbucket\nCloud servers\nOpen-source work, public code, non-sensitive projects, teams across different institutions\n\n\nShared Network Drive\nInternal university/company server (e.g., S:\\ResearchTeam\\)\nSensitive patient/clinical data, confidential code, offline environments, strict governance\n\n\nLocal Folder / USB\nAnother directory on your PC or external drive\nPractice, offline backups, personal sync\n\n\n\n\nKey takeaway: The commands (clone, push, pull) are identical whether your remote is https://github.com/... or S:/SharedData/MyProject.git!"
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#what-is-a-bare-repository",
+    "href": "3-sharing-repos-and-remotes.html#what-is-a-bare-repository",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "What is a “Bare” Repository?",
+    "text": "What is a “Bare” Repository?\nWhen you create a standard repository with git init, you get two things: 1. The hidden .git directory (the history and database). 2. The working directory (the visible files you open and edit).\nWhy central shared remotes must be “bare”:\nIf Alice and Bob push changes to a remote folder that has files checked out, Git would get confused about whose active edits should show on screen.\nTo solve this, shared central repositories are created with the --bare flag:\ngit init --bare\n\nA bare repository contains only the version control database (no working files to edit directly).\nIt serves purely as an exchange post for people to push to and pull from.\nOn GitHub, every repository you create is automatically a bare repository behind the scenes!"
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#the-core-remote-commands",
+    "href": "3-sharing-repos-and-remotes.html#the-core-remote-commands",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "2. The Core Remote Commands",
+    "text": "2. The Core Remote Commands\nThere are three essential commands you will use daily:\n1. git clone &lt;location&gt;\nDownloads an existing remote repository to your local machine, creating a new working folder with the full commit history and setting up the link to the remote automatically.\n2. git push\nSends your local committed snapshots up to the remote repository so your collaborators can see them.\n3. git pull\nFetches new commits from the remote repository and integrates them into your current local files."
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#checking-your-remotes-git-remote--v",
+    "href": "3-sharing-repos-and-remotes.html#checking-your-remotes-git-remote--v",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "Checking Your Remotes: git remote -v",
+    "text": "Checking Your Remotes: git remote -v\nTo see where your current repository is connected, run:\ngit remote -v\nOutput:\norigin  https://github.com/ICON-in-R/git-and-github-training.git (fetch)\norigin  https://github.com/ICON-in-R/git-and-github-training.git (push)\n\norigin: This is just the default nickname Git gives to the primary remote repository URL/path you cloned from or connected to.\nIt is much easier to type git push origin main than typing the whole URL or folder path every time!"
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#interactive-hands-on-exercise-15-mins",
+    "href": "3-sharing-repos-and-remotes.html#interactive-hands-on-exercise-15-mins",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "3. Interactive Hands-On Exercise (15 Mins)",
+    "text": "3. Interactive Hands-On Exercise (15 Mins)\nWe are going to simulate a full two-person team collaboration right on your computer. No internet or GitHub account required!\n                    [ Central Shared Hub ]\n                     (central-project.git)\n                           ^      ^\n               clone / push |      | clone / pull\n                           |      |\n                    [ Alice ]    [ Bob ]\nOpen your terminal (PowerShell, Git Bash, or Terminal)."
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#what-about-github",
+    "href": "3-sharing-repos-and-remotes.html#what-about-github",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "4. What about GitHub?",
+    "text": "4. What about GitHub?\nIf your workplace allows cloud hosting (no restricted/patient-identifiable data), GitHub works the exact same way:\nScenario A: Starting from an existing GitHub repository\nIf a colleague already set up a GitHub repository:\ngit clone https://github.com/organization/project-name.git\ncd project-name\n# work, commit, then:\ngit push\ngit pull\nScenario B: Connecting an existing local project to GitHub\nIf you already started a project locally: 1. Create a new empty repository on github.com (leave “Add README” unchecked). 2. Link your local repo to GitHub: bash    git remote add origin https://github.com/your-username/your-repo.git    git branch -M main    git push -u origin main"
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#collaboration-golden-rules-gotchas",
+    "href": "3-sharing-repos-and-remotes.html#collaboration-golden-rules-gotchas",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "5. Collaboration Golden Rules & Gotchas",
+    "text": "5. Collaboration Golden Rules & Gotchas\nRule #1: “Pull before you push”\nBefore you begin work for the day, and right before you push your commits, always run:\ngit pull\nThis ensures you have the latest updates and prevents surprises."
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#sensitive-data-governance-checklist",
+    "href": "3-sharing-repos-and-remotes.html#sensitive-data-governance-checklist",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "Sensitive Data & Governance Checklist 🔒",
+    "text": "Sensitive Data & Governance Checklist 🔒\nBefore pushing code anywhere:\n\nNever commit sensitive data:\n\nPatient health identifiers, survey respondent info, passwords, private API tokens.\n\nUse .gitignore:\n\nList data files (*.csv, *.rds, *.xlsx, data/) so Git ignores them automatically.\n\nChoose the right remote:\n\nPublic code \\(\\rightarrow\\) GitHub.\nRestricted/Governance-controlled data & code \\(\\rightarrow\\) Internal Shared Drive / Trusted Research Environment (TRE)."
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#summary-command-cheat-sheet",
+    "href": "3-sharing-repos-and-remotes.html#summary-command-cheat-sheet",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "Summary: Command Cheat Sheet",
+    "text": "Summary: Command Cheat Sheet\n\n\n\n\n\n\n\nTask\nCommand\n\n\n\n\nCopy remote to local\ngit clone &lt;path-or-url&gt;\n\n\nCheck connected remotes\ngit remote -v\n\n\nLink local repo to a remote\ngit remote add origin &lt;path-or-url&gt;\n\n\nUpload local commits\ngit push (or git push -u origin main first time)\n\n\nDownload & merge remote commits\ngit pull\n\n\nDownload commits without merging\ngit fetch\n\n\nCreate a central server repo\ngit init --bare"
+  },
+  {
+    "objectID": "3-sharing-repos-and-remotes.html#questions-discussion",
+    "href": "3-sharing-repos-and-remotes.html#questions-discussion",
+    "title": "Sharing Repositories and Collaborating: Git Remotes, GitHub, and Shared Drives",
+    "section": "Questions & Discussion 🙋‍♂️",
+    "text": "Questions & Discussion 🙋‍♂️\n\nHave you used shared network drives for code before?\nWhat data governance constraints do you have in your team?\nNext session preview: Branching, Pull Requests, and Handling Conflicts!"
+  },
+  {
+    "objectID": "1-how-to-setup-git.html",
+    "href": "1-how-to-setup-git.html",
+    "title": "Installing and Setting Up Git on Windows",
+    "section": "",
+    "text": "Git is an essential version control system for software development and data science projects. This guide will walk you through the process of installing and configuring Git on a Windows machine. 🧐"
   },
   {
     "objectID": "1-how-to-setup-git.html#introduction",
     "href": "1-how-to-setup-git.html#introduction",
     "title": "Installing and Setting Up Git on Windows",
-    "section": "Introduction",
-    "text": "Introduction\nGit is an essential version control system for software development and data science projects. This guide will walk you through the process of installing and configuring Git on a Windows machine. 🧐"
+    "section": "",
+    "text": "Git is an essential version control system for software development and data science projects. This guide will walk you through the process of installing and configuring Git on a Windows machine. 🧐"
   },
   {
     "objectID": "1-how-to-setup-git.html#installation",
@@ -117,6 +194,41 @@
     "title": "Installing and Setting Up Git on Windows",
     "section": "Next Steps",
     "text": "Next Steps\nCongratulations! 🎉 You have successfully installed and configured Git on your Windows machine. You are now ready to start using it for version control.\nYou can begin by:\n\nCreate a new folder with mkdir git-practice\nMove to folder with cd git-practice\nCreating a new repository with git init.\nCloning an existing repository from a service like GitHub with git clone &lt;repository-url&gt;."
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html",
+    "href": "2-introduction-to-git-commands.html",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "",
+    "text": "We can connect the fundamental concepts of Git to a typical data science workflow using three key ideas: the repository, the commit, and the diff.\nRecall that a repository (or repo) is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo at a specific moment.\nIn fact, the notion of any specific version of a file is as an accumulation of diffs. If you go back far enough, you find the commit where the file was created in the first place. Every later version is stored by Git as that initial version, plus all the intervening diffs in the history that affect the file.\nEvery time you make a commit you must also write a short commit message. Ideally, this conveys the motivation for the change; the diff will show the content so don’t talk about this. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the history, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed.\nEvery commit needs some sort of ID and Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers. Usually the first 7 characters suffice. You can also designate certain snapshots as special with a tag, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., “v1.0.3”. For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators.\n\n\n\n\n\nCreate a new folder in Explorer or with\nmkdir git-practice\nMove to folder in Explorer or with\ncd git-practice\nCreate a new repository with\ngit init\nYou’ll now see a .git folder in your repo folder. This is the only difference to how you would work otherwise. This folder contains the notes of the changes made with each commit.\n\n\n\nYou’ll need to create empty files to practice commands.\nUse your File Explorer (GUI) by right-clicking within a folder. The steps are very similar across Windows, macOS, and Linux.\n\nNavigate to the project folder where you want to create the file.\nRight-click on an empty space inside the folder.\nFrom the context menu, select New, then choose Text Document (Windows) or an equivalent option like New File (macOS/Linux).\nName the new file foo.txt and press Enter. Make sure the extension is .txt and not something like .txt.txt.\n\nor use the command line. The fastest way to create an empty file is with the touch command in your terminal. This command updates the modification time of an existing file or creates a new, empty file if it doesn’t exist.\n\nOpen your terminal (like Terminal, Git Bash, or PowerShell).\nNavigate to your project directory using the cd command.\nRun the following command:\n\n\"hello\" &gt; foo.txt\nThis will instantly create an empty file named foo.txt in your current directory. You can confirm it was created by running the ls command to list the contents of the directory.\n\n\n\nUse git add to stage files (i.e., select them to be included in the next commit) and git commit to save the snapshot.\n# Stage a specific file for the next commit\ngit add foo.txt\n\n# Commit the staged changes with a descriptive message\ngit commit --message \"A commit message\"\n\n\n\nThese commands help you see the current status, untracked files, and the history of commits.\n# See the status of your working directory and staging area\ngit status\n\n# View the detailed commit history\ngit log\n\n# View a condensed, one-line version of the commit history\ngit log --oneline\n\n\n\nUse git diff to see the exact changes between commits or between your current work and the last commit.\n# View differences between your working directory and the last commit\ngit diff"
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#commits-diffs-and-tags",
+    "href": "2-introduction-to-git-commands.html#commits-diffs-and-tags",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "",
+    "text": "We can connect the fundamental concepts of Git to a typical data science workflow using three key ideas: the repository, the commit, and the diff.\nRecall that a repository (or repo) is just a directory of files that Git manages holistically. A commit functions like a snapshot of all the files in the repo at a specific moment.\nIn fact, the notion of any specific version of a file is as an accumulation of diffs. If you go back far enough, you find the commit where the file was created in the first place. Every later version is stored by Git as that initial version, plus all the intervening diffs in the history that affect the file.\nEvery time you make a commit you must also write a short commit message. Ideally, this conveys the motivation for the change; the diff will show the content so don’t talk about this. When you revisit a project after a break or need to digest recent changes made by a colleague, looking at the history, by reading commit messages and skimming through diffs, is an extremely efficient way to get up to speed.\nEvery commit needs some sort of ID and Git does this automatically, assigning each commit what is called a SHA, a seemingly random string of 40 letters and numbers. Usually the first 7 characters suffice. You can also designate certain snapshots as special with a tag, which is a name of your choosing. In a software project, it is typical to tag a release with its version, e.g., “v1.0.3”. For a manuscript or analytical project, you might tag the version submitted to a journal or transmitted to external collaborators.\n\n\n\n\n\nCreate a new folder in Explorer or with\nmkdir git-practice\nMove to folder in Explorer or with\ncd git-practice\nCreate a new repository with\ngit init\nYou’ll now see a .git folder in your repo folder. This is the only difference to how you would work otherwise. This folder contains the notes of the changes made with each commit.\n\n\n\nYou’ll need to create empty files to practice commands.\nUse your File Explorer (GUI) by right-clicking within a folder. The steps are very similar across Windows, macOS, and Linux.\n\nNavigate to the project folder where you want to create the file.\nRight-click on an empty space inside the folder.\nFrom the context menu, select New, then choose Text Document (Windows) or an equivalent option like New File (macOS/Linux).\nName the new file foo.txt and press Enter. Make sure the extension is .txt and not something like .txt.txt.\n\nor use the command line. The fastest way to create an empty file is with the touch command in your terminal. This command updates the modification time of an existing file or creates a new, empty file if it doesn’t exist.\n\nOpen your terminal (like Terminal, Git Bash, or PowerShell).\nNavigate to your project directory using the cd command.\nRun the following command:\n\n\"hello\" &gt; foo.txt\nThis will instantly create an empty file named foo.txt in your current directory. You can confirm it was created by running the ls command to list the contents of the directory.\n\n\n\nUse git add to stage files (i.e., select them to be included in the next commit) and git commit to save the snapshot.\n# Stage a specific file for the next commit\ngit add foo.txt\n\n# Commit the staged changes with a descriptive message\ngit commit --message \"A commit message\"\n\n\n\nThese commands help you see the current status, untracked files, and the history of commits.\n# See the status of your working directory and staging area\ngit status\n\n# View the detailed commit history\ngit log\n\n# View a condensed, one-line version of the commit history\ngit log --oneline\n\n\n\nUse git diff to see the exact changes between commits or between your current work and the last commit.\n# View differences between your working directory and the last commit\ngit diff"
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#practice-recovering-from-mistakes",
+    "href": "2-introduction-to-git-commands.html#practice-recovering-from-mistakes",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "Practice Recovering From Mistakes",
+    "text": "Practice Recovering From Mistakes\nThis section covers how to recover from common mistakes. You can practice these commands in any local Git repository you’ve created. These operations do not involve GitHub.\nA word of caution: if the commit you want to fix is not your most recent one, seriously consider just letting it go. Trying to change older history can get complicated quickly."
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#undoing-the-last-commit-with-git-reset",
+    "href": "2-introduction-to-git-commands.html#undoing-the-last-commit-with-git-reset",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "Undoing the Last Commit with git reset",
+    "text": "Undoing the Last Commit with git reset\nSo, you want to undo the last commit? You have a few options depending on what you want to do with the work you’ve committed. The HEAD^ syntax refers to the commit before the most recent one.\n\nOption 1: Discard Everything (Hard Reset)\nThis option completely undoes the last commit and discards all of the changes in those files. Use this with caution! ⚠️\n\nUse Case: You want to completely erase the last commit and any work associated with it.\nCommand: git reset --hard HEAD^\nOutcome: You will lose any changes that were not reflected in the commit-before-last. Your project is now in the exact state it was in before you made the bad commit.\n\n# WARNING: This deletes your work from the last commit\ngit reset --hard HEAD^\n\n\nOption 2: Keep Changes, Unstage Files (Mixed Reset)\nThis is the default reset mode. It undoes the commit but leaves the files in your working directory as they were. The changes will be unstaged.\n\nUse Case: You like the changes you made, but you want to recommit them differently, perhaps in multiple, smaller commits.\nCommand: git reset HEAD^\nOutcome: The commit is undone. Your files still contain all the changes, but they are no longer staged for the next commit.\n\n# This is the same as `git reset --mixed HEAD^`\ngit reset HEAD^\n\n\nOption 3: Keep Changes, Keep Files Staged (Soft Reset)\nThis option is the least destructive. It undoes the commit but leaves your working directory and your staging area exactly as they were.\n\nUse Case: You just want to edit the commit message or add one more small change to the last commit.\nCommand: git reset --soft HEAD^\nOutcome: It’s as if you ran git add but never ran git commit. You are right back to the moment before you committed.\n\n# Undoes the commit but leaves everything staged\ngit reset --soft HEAD^"
+  },
+  {
+    "objectID": "2-introduction-to-git-commands.html#amending-the-most-recent-commit",
+    "href": "2-introduction-to-git-commands.html#amending-the-most-recent-commit",
+    "title": "A Git Tutorial: Commits, Branches, and Diffs",
+    "section": "Amending the Most Recent Commit",
+    "text": "Amending the Most Recent Commit\nIf you just want to tweak the most recent commit—like fixing a typo in the commit message or adding a file you forgot—it’s often easier to amend it rather than resetting.\nFirst, make any changes you need to your files and stage them with git add. If you only want to change the commit message, you don’t need to change any files.\nTo amend from the command line, you can either have Git open an editor to let you create the new message or provide the new message directly.\n# This opens your default text editor to change the commit message\ngit commit --amend\n# This amends the commit and provides a new message directly\ngit commit --amend -m \"New, corrected commit message\"\n\nDifference between git add . and git commit -all\nIn Git, committing is a two-step process: first you stage changes with git add, then you commit them with git commit. Two common workflows accomplish this, but they behave differently, especially concerning new files.\nThe key difference between git commit -a and git add . is how they handle new, untracked files.\nThe git commit -a command (or git commit --all) is a shortcut that combines staging and committing into a single step. However, it only stages files that Git is already tracking.\n\nWhat it does: Automatically stages all modified or deleted files that have been previously committed to the repository, and then opens the commit message editor.\nWhat it ignores: It will completely ignore any new files you have created that Git does not yet track.\n\nThe comprehensive method is to use git add . and git commit. This is the standard, explicit two-step workflow. The git add . command is a powerful staging tool.\n\nWhat it does: git add . stages all changes in the current directory. This includes modifications to tracked files, deletions of tracked files, and any new, untracked files.\nWhat it ignores: Nothing. It stages everything."
   },
   {
     "objectID": "index.html",

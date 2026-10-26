@@ -12,6 +12,8 @@ website:
         text: Setup Git
       - href: 2-introduction-to-git-commands.qmd
         text: Git Commands
+      - href: 3-sharing-repos-and-remotes.qmd
+        text: Sharing & Remotes
       - href: intro-to-git-presentation.qmd
         text: Presentation
 
