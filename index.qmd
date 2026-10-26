@@ -17,6 +17,8 @@ Welcome to the **Git and GitHub Training** repository! This resource is designed
 - [Contributing](#contributing)
 - [License](#license)
 
+some random edit
+
 ---
 
 ## About This Repository
