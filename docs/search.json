@@ -292,5 +292,47 @@
     "title": "Git and GitHub Training",
     "section": "",
     "text": "Contributions and suggestions are welcome! Please open an issue or submit a pull request.\n\nHappy coding! 🚀"
+  },
+  {
+    "objectID": "introduction_to_github_desktop.html",
+    "href": "introduction_to_github_desktop.html",
+    "title": "Introduction to GitHub Desktop",
+    "section": "",
+    "text": "Now that you have a solid grasp of basic Git concepts via the command line (CLI), you might be wondering: why use a Graphical User Interface (GUI) like GitHub Desktop?\nWhile the command line is powerful and essential for advanced Git operations, a GUI excels at visualization. GitHub Desktop makes it incredibly easy to review complex diffs, quickly scan your commit history, and manage branches without needing to type out verbose commands.\nThis guide will help you translate your CLI knowledge into the GitHub Desktop workflow."
+  },
+  {
+    "objectID": "introduction_to_github_desktop.html#introduction",
+    "href": "introduction_to_github_desktop.html#introduction",
+    "title": "Introduction to GitHub Desktop",
+    "section": "",
+    "text": "Now that you have a solid grasp of basic Git concepts via the command line (CLI), you might be wondering: why use a Graphical User Interface (GUI) like GitHub Desktop?\nWhile the command line is powerful and essential for advanced Git operations, a GUI excels at visualization. GitHub Desktop makes it incredibly easy to review complex diffs, quickly scan your commit history, and manage branches without needing to type out verbose commands.\nThis guide will help you translate your CLI knowledge into the GitHub Desktop workflow."
+  },
+  {
+    "objectID": "introduction_to_github_desktop.html#mapping-cli-commands-to-github-desktop",
+    "href": "introduction_to_github_desktop.html#mapping-cli-commands-to-github-desktop",
+    "title": "Introduction to GitHub Desktop",
+    "section": "Mapping CLI Commands to GitHub Desktop",
+    "text": "Mapping CLI Commands to GitHub Desktop\nIf you know the CLI, you already know how GitHub Desktop works under the hood. Here is how your favorite commands map to the interface:\n\n\n\n\n\n\n\n\nCLI Command\nGitHub Desktop Action\nLocation in App\n\n\n\n\ngit clone &lt;url&gt;\nClone repository…\nFile &gt; Clone repository... or the startup screen\n\n\ngit status\nChanges tab\nLeft sidebar, automatically updates\n\n\ngit diff\nDiff view\nMain right-hand panel when selecting changed files\n\n\ngit add &lt;file&gt;\nCheckboxes next to files\nLeft sidebar (check/uncheck to stage/unstage)\n\n\ngit commit -m \"msg\"\nCommit to &lt;branch&gt; button\nBottom left corner (Summary and Description boxes)\n\n\ngit push\nPush origin\nTop toolbar button (up arrow)\n\n\ngit pull\nFetch origin / Pull origin\nTop toolbar button (down arrow)\n\n\ngit checkout -b &lt;branch&gt;\nCurrent Branch &gt; New Branch\nTop middle toolbar dropdown"
+  },
+  {
+    "objectID": "introduction_to_github_desktop.html#core-workflow-walkthrough",
+    "href": "introduction_to_github_desktop.html#core-workflow-walkthrough",
+    "title": "Introduction to GitHub Desktop",
+    "section": "Core Workflow Walkthrough",
+    "text": "Core Workflow Walkthrough\nLet’s walk through a standard development cycle using GitHub Desktop.\n\n1. Getting a Repository (Clone)\nInstead of typing git clone, you can connect your GitHub account directly to the app. - Go to File &gt; Clone repository… - You will see a list of all your GitHub repositories. Simply select one and choose your local path. - Bonus: You can also drag and drop an existing local repository folder into the app to track it (git init / git remote add).\n\n\n2. Creating a Branch\nBranching is highly visual in GitHub Desktop. - Click the Current Branch dropdown at the top. - Type a new branch name and click New Branch. - You will be prompted to choose whether to base it on your current local changes or a fresh copy of main.\n\n\n3. Staging and Committing (The Sweet Spot)\nThis is where GitHub Desktop truly shines compared to the CLI. When you edit files in your code editor, GitHub Desktop automatically updates the Changes tab on the left.\n\nStaging (git add): Check or uncheck the boxes next to your modified files. You can even highlight specific lines in the diff view (right panel) and right-click to commit only those specific lines (partial staging).\nCommitting (git commit): Type your message in the “Summary” box at the bottom left and click the blue Commit button.\n\n\n\n4. Syncing with the Remote (Push / Pull)\nGitHub Desktop simplifies the remote synchronization process. - The Fetch origin button at the top right regularly checks for upstream changes. - If there are remote commits you don’t have, it changes to Pull origin with a downward arrow and a number indicating how many commits you are behind. - Once you make a local commit, the button changes to Push origin with an upward arrow."
+  },
+  {
+    "objectID": "introduction_to_github_desktop.html#advanced-features-handy-tricks",
+    "href": "introduction_to_github_desktop.html#advanced-features-handy-tricks",
+    "title": "Introduction to GitHub Desktop",
+    "section": "Advanced Features & Handy Tricks",
+    "text": "Advanced Features & Handy Tricks\nSince you already know how Git works, here are a few GitHub Desktop features that will speed up your workflow:\n\n1. Easy Stashing\nIf you try to switch branches while having uncommitted changes, GitHub Desktop will pop up a friendly prompt asking if you want to Bring your changes to the new branch or Stash your changes on the current branch. No need to run git stash and git stash pop manually.\n\n\n2. The History Tab\nClicking the History tab (next to Changes) gives you a beautiful, chronological view of your git log. Selecting any commit instantly shows the exact diff of what was changed in that specific commit.\n\n\n3. Undoing Commits\nMade a mistake? If you haven’t pushed yet, there is an Undo button right below the commit box. This effectively runs a safe git reset --soft HEAD~1, putting your files back into the staging area so you can fix them."
+  },
+  {
+    "objectID": "introduction_to_github_desktop.html#conclusion",
+    "href": "introduction_to_github_desktop.html#conclusion",
+    "title": "Introduction to GitHub Desktop",
+    "section": "Conclusion",
+    "text": "Conclusion\nYou don’t have to choose exclusively between the CLI and GitHub Desktop. Many professional developers use a hybrid approach: using GitHub Desktop for reviewing code diffs, staging specific lines, and viewing history, while dropping into the command line for complex rebases or merge conflict resolutions.\nOpen up the app, clone a repo, and try clicking around—you already know the underlying mechanics!"
   }
 ]

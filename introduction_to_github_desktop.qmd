@@ -1,0 +1,81 @@
+---
+title: "Introduction to GitHub Desktop"
+subtitle: "A Guide for Command Line Git Users"
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    theme: cosmo
+    code-fold: true
+---
+
+## Introduction
+
+Now that you have a solid grasp of basic Git concepts via the command line (CLI), you might be wondering: *why use a Graphical User Interface (GUI) like GitHub Desktop?*
+
+While the command line is powerful and essential for advanced Git operations, a GUI excels at **visualization**. GitHub Desktop makes it incredibly easy to review complex diffs, quickly scan your commit history, and manage branches without needing to type out verbose commands. 
+
+This guide will help you translate your CLI knowledge into the GitHub Desktop workflow.
+
+## Mapping CLI Commands to GitHub Desktop
+
+If you know the CLI, you already know how GitHub Desktop works under the hood. Here is how your favorite commands map to the interface:
+
+| CLI Command | GitHub Desktop Action | Location in App |
+|:---|:---|:---|
+| `git clone <url>` | **Clone repository...** | `File > Clone repository...` or the startup screen |
+| `git status` | **Changes tab** | Left sidebar, automatically updates |
+| `git diff` | **Diff view** | Main right-hand panel when selecting changed files |
+| `git add <file>` | **Checkboxes next to files** | Left sidebar (check/uncheck to stage/unstage) |
+| `git commit -m "msg"` | **Commit to `<branch>` button** | Bottom left corner (Summary and Description boxes) |
+| `git push` | **Push origin** | Top toolbar button (up arrow) |
+| `git pull` | **Fetch origin / Pull origin** | Top toolbar button (down arrow) |
+| `git checkout -b <branch>`| **Current Branch > New Branch** | Top middle toolbar dropdown |
+
+## Core Workflow Walkthrough
+
+Let's walk through a standard development cycle using GitHub Desktop.
+
+### 1. Getting a Repository (Clone)
+Instead of typing `git clone`, you can connect your GitHub account directly to the app. 
+- Go to **File > Clone repository...**
+- You will see a list of all your GitHub repositories. Simply select one and choose your local path. 
+- *Bonus:* You can also drag and drop an existing local repository folder into the app to track it (`git init` / `git remote add`).
+
+### 2. Creating a Branch
+Branching is highly visual in GitHub Desktop.
+- Click the **Current Branch** dropdown at the top.
+- Type a new branch name and click **New Branch**. 
+- You will be prompted to choose whether to base it on your current local changes or a fresh copy of `main`.
+
+### 3. Staging and Committing (The Sweet Spot)
+This is where GitHub Desktop truly shines compared to the CLI.
+When you edit files in your code editor, GitHub Desktop automatically updates the **Changes** tab on the left.
+
+- **Staging (`git add`):** Check or uncheck the boxes next to your modified files. You can even highlight specific lines in the diff view (right panel) and right-click to commit *only those specific lines* (partial staging).
+- **Committing (`git commit`):** Type your message in the "Summary" box at the bottom left and click the blue **Commit** button.
+
+### 4. Syncing with the Remote (Push / Pull)
+GitHub Desktop simplifies the remote synchronization process.
+- The **Fetch origin** button at the top right regularly checks for upstream changes.
+- If there are remote commits you don't have, it changes to **Pull origin** with a downward arrow and a number indicating how many commits you are behind.
+- Once you make a local commit, the button changes to **Push origin** with an upward arrow.
+
+## Advanced Features & Handy Tricks
+
+Since you already know how Git works, here are a few GitHub Desktop features that will speed up your workflow:
+
+### 1. Easy Stashing
+If you try to switch branches while having uncommitted changes, GitHub Desktop will pop up a friendly prompt asking if you want to **Bring your changes to the new branch** or **Stash your changes** on the current branch. No need to run `git stash` and `git stash pop` manually.
+
+### 2. The History Tab
+Clicking the **History** tab (next to Changes) gives you a beautiful, chronological view of your `git log`. Selecting any commit instantly shows the exact diff of what was changed in that specific commit. 
+
+### 3. Undoing Commits
+Made a mistake? If you haven't pushed yet, there is an **Undo** button right below the commit box. This effectively runs a safe `git reset --soft HEAD~1`, putting your files back into the staging area so you can fix them.
+
+## Conclusion
+
+You don't have to choose exclusively between the CLI and GitHub Desktop. Many professional developers use a hybrid approach: using GitHub Desktop for reviewing code diffs, staging specific lines, and viewing history, while dropping into the command line for complex rebases or merge conflict resolutions. 
+
+Open up the app, clone a repo, and try clicking around—you already know the underlying mechanics!
